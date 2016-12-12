@@ -5,5 +5,10 @@
     <string name="logon_hint_email">请输入邮箱:</string>
     <string name="logon_welcome">Welcome</string>
     <string name="logon">登录</string>
+    <string name="greendao_hint_show_info">展示数据库信息</string>
+    <string name="green_hint_insert">插入</string>
+    <string name="green_hint_delete">删除(最后三条)</string>
+    <string name="green_hint_update">修改(全部昵称)</string>
+    <string name="green_select">查询</string>
 
 </resources>

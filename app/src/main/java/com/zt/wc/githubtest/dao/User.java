@@ -68,6 +68,6 @@ public class User {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", mark='" + mark + '\'' +
-                '}';
+                '}'+"\n";
     }
 }
