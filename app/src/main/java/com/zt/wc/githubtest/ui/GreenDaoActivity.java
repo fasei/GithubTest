@@ -1,7 +1,7 @@
 package com.zt.wc.githubtest.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.zt.wc.githubtest.R;
+import com.zt.wc.githubtest.base.BaseActivity;
 import com.zt.wc.githubtest.dao.GreenDaoManager;
 import com.zt.wc.githubtest.dao.User;
 import com.zt.wc.githubtest.greendao.gen.UserDao;
@@ -23,7 +24,7 @@ import butterknife.OnClick;
 /**
  * GreenDao的初次使用，效果很满意，哈哈
  */
-public class GreenDaoActivity extends AppCompatActivity {
+public class GreenDaoActivity extends BaseActivity {
     private static final String TAG = "GreenDaoActivity";
     @Bind(R.id.greendao_user_name)
     EditText mUserName;
@@ -39,13 +40,15 @@ public class GreenDaoActivity extends AppCompatActivity {
     Button mUpdate;
     @Bind(R.id.green_select)
     Button mSelect;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
     private UserDao mUserDao;  //数据表的持有对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_green_dao);
-        ButterKnife.bind(this);
+        initToolBar(toolbar,true,"GreenDao");
 
         init();
     }
@@ -57,7 +60,7 @@ public class GreenDaoActivity extends AppCompatActivity {
 
     @OnClick({R.id.green_insert, R.id.green_delete, R.id.green_update, R.id.green_select})
     public void onClick(View view) {
-        Log.d(TAG, "onClick: "+view.getId());
+        Log.d(TAG, "onClick: " + view.getId());
         switch (view.getId()) {
             case R.id.green_insert: {
                 insert();
@@ -69,11 +72,11 @@ public class GreenDaoActivity extends AppCompatActivity {
                 select();
             }
             break;
-            case R.id.green_update:{
+            case R.id.green_update: {
                 update();
                 select();
             }
-                break;
+            break;
             case R.id.green_select: {
                 select();
             }
