@@ -20,6 +20,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * GreenDao的初次使用，效果很满意，哈哈
+ */
 public class GreenDaoActivity extends AppCompatActivity {
     private static final String TAG = "GreenDaoActivity";
     @Bind(R.id.greendao_user_name)
@@ -36,8 +39,7 @@ public class GreenDaoActivity extends AppCompatActivity {
     Button mUpdate;
     @Bind(R.id.green_select)
     Button mSelect;
-
-    private UserDao mUserDao;
+    private UserDao mUserDao;  //数据表的持有对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,9 @@ public class GreenDaoActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 查询数据库的内容
+     */
     private void select() {
         Log.d(TAG, "onClick: green_select");
         List<User> userList = mUserDao.queryBuilder().where(UserDao.Properties.Id.ge(1)).build().list();
@@ -89,6 +94,9 @@ public class GreenDaoActivity extends AppCompatActivity {
         mShowInfo.setText(strBuffer.toString().trim());
     }
 
+    /**
+     * 更新数据库
+     */
     private void update() {
         Log.d(TAG, "onClick: green_update");
         List<User> userList = mUserDao.queryBuilder().where(UserDao.Properties.Age.ge(0)).build().list();
@@ -99,6 +107,9 @@ public class GreenDaoActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 删除数据库的三条数据
+     */
     private void delete() {
         Log.d(TAG, "onClick: green_delete");
         List<User> users = mUserDao.queryBuilder().where(UserDao.Properties.Age.ge(0)).orderDesc(UserDao.Properties.Id).limit(3).build().list();
@@ -107,6 +118,9 @@ public class GreenDaoActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 插入一条新的数据
+     */
     private void insert() {
         Log.d(TAG, "onClick: green_insert");
         String name = mUserName.getText().toString().trim();
