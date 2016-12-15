@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zt.wc.githubtest.R;
 import com.zt.wc.githubtest.base.BaseActivity;
@@ -49,6 +50,10 @@ public class GreenDaoActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_green_dao);
         initToolBar(toolbar,true,"GreenDao");
+
+        Bundle extras = getIntent().getExtras();
+        String id=extras.getString("id");
+        Toast.makeText(this, "....."+id, Toast.LENGTH_SHORT).show();
 
         init();
     }
