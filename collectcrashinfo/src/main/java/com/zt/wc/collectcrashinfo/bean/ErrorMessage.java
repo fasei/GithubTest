@@ -37,8 +37,7 @@ public class ErrorMessage {
         mBuffer.append("/**************************Golog***************************/\n");
         mBuffer.append("/********Time:"+ TimeUtils.getTime()+"\n");
         if(mPhoneInfo!=null){
-            mBuffer.append("/********Phone Branch:"+mPhoneInfo.getmTypeBranch()+"\n");
-            mBuffer.append("/********Phone Type:"+mPhoneInfo.getmType()+"\n");
+            mBuffer.append(mPhoneInfo.format());
         }
         mBuffer.append(mErrorMessage+"\n");
         mBuffer.append("/**************************Endlog**************************/");

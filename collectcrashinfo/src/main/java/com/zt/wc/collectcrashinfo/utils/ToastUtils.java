@@ -11,7 +11,7 @@ public class ToastUtils {
 			toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
 		} else {
 			toast.setText(msg);
-			toast.setDuration(Toast.LENGTH_SHORT);
+			toast.setDuration(Toast.LENGTH_LONG);
 		}
 		toast.show();
 	}

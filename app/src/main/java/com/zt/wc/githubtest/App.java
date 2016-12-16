@@ -3,8 +3,11 @@ package com.zt.wc.githubtest;
 import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
+import android.provider.ContactsContract;
 
 import com.zt.wc.collectcrashinfo.CrashHandler;
+import com.zt.wc.collectcrashinfo.bean.MailSenderInfo;
+import com.zt.wc.collectcrashinfo.type.CollectType;
 import com.zt.wc.githubtest.dao.GreenDaoManager;
 
 /**
@@ -19,7 +22,7 @@ public class App extends Application{
         super.onCreate();
         mContext=getApplicationContext();
         GreenDaoManager.getInstance();  //首先初始化数据库内容
-        CrashHandler.getInstance().init(this).setLogPath("log.log");  //崩溃信息收集器
+        CrashHandler.getInstance().init(this).setmCollectType(CollectType.Email).setmMailSenderInfo(new MailSenderInfo().setToAddress()).setLogPath("log.log");  //崩溃信息收集器
     }
 
     /**

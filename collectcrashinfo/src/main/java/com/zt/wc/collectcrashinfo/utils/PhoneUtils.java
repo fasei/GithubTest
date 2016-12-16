@@ -80,9 +80,14 @@ public class PhoneUtils {
      */
     public static PhoneInfo getPhoneInfo(Context context){
         TelephonyManager mTm = (TelephonyManager)context.getSystemService(TELEPHONY_SERVICE);
-        String mtype = android.os.Build.MODEL; // 手机型号
-        String mtyb= android.os.Build.BRAND;//手机品牌
-        return new PhoneInfo(mtype,mtyb);
+        String mType = android.os.Build.MODEL; // 手机型号
+        String mTypeBranch= android.os.Build.BRAND;//手机品牌
+        String mSdkVersion=Build.VERSION.SDK_INT+"";//SDK版本
+        String mSystemVersion=Build.VERSION.RELEASE;//系统版本
+        String mAppVersion=AppUtils.getVersionCode(context)+"";//App版本
+        String mAppVersionName=AppUtils.getVersionName(context);//App版本名称
+        String mAppPackage=AppUtils.getPackageName(context);//App包名
+        return new PhoneInfo(mType,mTypeBranch,mSdkVersion,mSystemVersion,mAppVersion,mAppVersionName,mAppPackage);
     }
 
 
