@@ -25,15 +25,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:design:24.1.1'
-    //MD style
-    compile 'com.jakewharton:butterknife:7.0.1'
-    //ButterKnife
+    compile 'com.android.support:design:24.1.1'//MD style
+    compile 'com.jakewharton:butterknife:7.0.1'//ButterKnife
     testCompile 'junit:junit:4.12'
-    compile 'com.lzy.widget:imagepicker:0.3.2'
-    //图片选择器，其中状态栏效果
-    compile 'org.greenrobot:greendao:3.0.1'
-    //GreenDao
+    compile 'com.lzy.widget:imagepicker:0.3.2'//图片选择器，其中状态栏效果
+    compile 'org.greenrobot:greendao:3.0.1'//GreenDao
     compile 'org.greenrobot:greendao-generator:3.0.0'
     compile 'com.lzy.net:okgo:2.0.0'
     compile 'com.alibaba:fastjson:1.1.54.android'
