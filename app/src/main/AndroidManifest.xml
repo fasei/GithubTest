@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.zt.wc.githubtest">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -13,7 +14,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="icon">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +27,8 @@
         <activity android:name=".ui.GreenDaoActivity" />
         <activity android:name=".ui.LogonUnicomActivity" />
         <activity android:name=".ui.UnicomWebActivity" />
-        <activity android:name=".ui.IOControlActivity"></activity>
+        <activity android:name=".ui.IOControlActivity" />
+        <activity android:name=".ui.SweetDialogActivity"></activity>
     </application>
 
 </manifest>

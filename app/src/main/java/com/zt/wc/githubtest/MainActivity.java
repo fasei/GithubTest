@@ -9,6 +9,7 @@ import com.zt.wc.collectcrashinfo.utils.EMailUtils;
 import com.zt.wc.collectcrashinfo.utils.LocalFileUtils;
 import com.zt.wc.githubtest.base.BaseActivity;
 import com.zt.wc.githubtest.ui.IOControlActivity;
+import com.zt.wc.githubtest.ui.SweetDialogActivity;
 
 public class MainActivity extends BaseActivity {
     public static MainActivity main;
@@ -22,7 +23,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "hello github!!!");
 
-        Intent mLogonIntent=new Intent(MainActivity.this, IOControlActivity.class);
+        Intent mLogonIntent=new Intent(MainActivity.this, SweetDialogActivity.class);
 //        mLogonIntent.setFlags(Intent.EXTRA_DOCK_STATE_HE_DESK&Intent.EXTRA_DOCK_STATE_HE_DESK);
 
 

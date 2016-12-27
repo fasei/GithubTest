@@ -22,7 +22,11 @@ public class App extends Application{
         super.onCreate();
         mContext=getApplicationContext();
         GreenDaoManager.getInstance();  //首先初始化数据库内容
-        CrashHandler.getInstance().init(this).setmCollectType(CollectType.Email).setmMailSenderInfo(new MailSenderInfo().setToAddress()).setLogPath("log.log");  //崩溃信息收集器
+        CrashHandler.getInstance()
+                .init(this)
+                .setmCollectType(CollectType.Email)
+                .setmMailSenderInfo(new MailSenderInfo().setToAddress("919536816@qq.com"))
+                .setLogPath("log.log");  //崩溃信息收集器
     }
 
     /**
