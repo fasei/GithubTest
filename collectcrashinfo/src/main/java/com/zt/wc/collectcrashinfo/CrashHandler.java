@@ -70,7 +70,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
                 switch (oneCollectType) {
                     case LocalLog: {
                         try {
-                            LocalFileUtils.judgeToLocalFile(mFileName, mErorMsg);
+                            LocalFileUtils.judgeToLocalFile(mContext,mFileName, mErorMsg);
                             Log.d(TAG, "Local Write.");
                         } catch (IOException e1) {
                             e1.printStackTrace();

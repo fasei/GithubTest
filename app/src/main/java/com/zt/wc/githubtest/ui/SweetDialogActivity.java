@@ -39,20 +39,6 @@ public class SweetDialogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sweet_dialog);
         ButterKnife.bind(this);
 
-//        SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-//        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-//        pDialog.setTitleText("正在加载...");
-//        pDialog.setCancelable(true);
-//        pDialog.setCanceledOnTouchOutside(false);
-//        pDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-//            @Override
-//            public void onCancel(DialogInterface dialog) {
-//                Toast.makeText(SweetDialogActivity.this, "fewf", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//        pDialog.show();
-
     }
 
     @OnClick({R.id.all, R.id.only_text, R.id.my_self,R.id.only_content_text, R.id.only_error, R.id.only_warm, R.id.only_success})

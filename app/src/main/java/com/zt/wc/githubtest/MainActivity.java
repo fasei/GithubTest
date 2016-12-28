@@ -23,12 +23,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "hello github!!!");
 
-        Intent mLogonIntent=new Intent(MainActivity.this, SweetDialogActivity.class);
-//        mLogonIntent.setFlags(Intent.EXTRA_DOCK_STATE_HE_DESK&Intent.EXTRA_DOCK_STATE_HE_DESK);
-
-
-        startActivity(mLogonIntent);
-        finish();
+//        Intent mLogonIntent=new Intent(MainActivity.this, SweetDialogActivity.class);
+////        mLogonIntent.setFlags(Intent.EXTRA_DOCK_STATE_HE_DESK&Intent.EXTRA_DOCK_STATE_HE_DESK);
+//
+//
+//        startActivity(mLogonIntent);
+//        finish();
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {

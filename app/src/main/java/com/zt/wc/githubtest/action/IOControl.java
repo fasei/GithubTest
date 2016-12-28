@@ -9,11 +9,13 @@ import android.util.Log;
 
 public class IOControl implements IControlColor {
     private static final String TAG = "IOControl";
-    public static final int Normal = 0;
-    public static final int Search = 1;
-    public static final int NoMac = 2;
-    public static final int LoginError = 3;
+
+    public static final int Normal = 0;//正常状态
+    public static final int Search = 1;//查询设备
+    public static final int NoMac = 2;//没有获取到MAC
+    public static final int LoginError = 3;//登录失败
     public static final int UserCMD = 4;//用户控制
+    public static final int Reboot=5;//重启模块
 
     private static IOControl mIOControl;
     private Handler mHandler;
