@@ -28,7 +28,23 @@
         <activity android:name=".ui.LogonUnicomActivity" />
         <activity android:name=".ui.UnicomWebActivity" />
         <activity android:name=".ui.IOControlActivity" />
-        <activity android:name=".ui.SweetDialogActivity"></activity>
+        <activity android:name=".ui.SweetDialogActivity" />
+        <activity android:name=".ui.ServiceOnKeyListernerActivity" />
+
+        <service
+            android:name=".MAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility" />
+        </service>
+
+        <activity android:name=".ui.SharePrefernceActivity" />
+        <activity android:name=".ui.ReceiveIpActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_share_preferrnce"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zt.wc.githubtest.ui.SharePrefernceActivity">
+
+    <TextView
+        android:id="@+id/show_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示台" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/radio_integer"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_integer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Integer" />
+
+        <RadioButton
+            android:id="@+id/radio_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="String" />
+
+        <RadioButton
+            android:id="@+id/radio_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Long" />
+
+        <RadioButton
+            android:id="@+id/radio_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Float" />
+
+        <RadioButton
+            android:id="@+id/radio_boolean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Boolean" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/input_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入Key" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/input_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请数据Value" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/sp_add"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="添加数据"
+        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/sp_remove"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="移除对应的key"
+        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/sp_update"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="更新数据"
+        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/sp_query"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="查询全部数据"
+        android:layout_height="match_parent" />
+</LinearLayout>
+    <Button
+        android:id="@+id/sp_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清空存储"
+        />
+</LinearLayout>

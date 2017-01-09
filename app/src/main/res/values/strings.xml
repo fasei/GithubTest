@@ -11,5 +11,6 @@
     <string name="green_hint_update">修改(全部昵称)</string>
     <string name="green_select">查询</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="gogogo">进入</string>
 
 </resources>

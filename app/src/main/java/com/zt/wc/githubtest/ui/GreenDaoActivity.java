@@ -51,9 +51,9 @@ public class GreenDaoActivity extends BaseActivity {
         setContentView(R.layout.activity_green_dao);
         initToolBar(toolbar,true,"GreenDao");
 
-        Bundle extras = getIntent().getExtras();
-        String id=extras.getString("id");
-        Toast.makeText(this, "....."+id, Toast.LENGTH_SHORT).show();
+//        Bundle extras = getIntent().getExtras();
+//        String id=extras.getString("id");
+//        Toast.makeText(this, "....."+id, Toast.LENGTH_SHORT).show();
 
         init();
     }
