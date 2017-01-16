@@ -12,5 +12,6 @@
     <string name="green_select">查询</string>
     <string name="title_activity_login">Sign in</string>
     <string name="gogogo">进入</string>
+    <string name="title_activity_basic">BasicActivity</string>
 
 </resources>

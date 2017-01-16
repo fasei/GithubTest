@@ -4,8 +4,13 @@
     android:id="@+id/activity_logon"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:windowSoftInputMode="stateVisible|adjustResize"
     android:orientation="vertical"
     tools:context="com.zt.wc.githubtest.ui.LogonActivity">
+    <!--
+    加入下面的属性，如果弹出软键盘，整体界面会上移
+    android:windowSoftInputMode="stateVisible|adjustResize"
+    -->
 
     <TextView
         android:layout_width="match_parent"

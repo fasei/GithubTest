@@ -47,4 +47,14 @@ public class LogonActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.logon)
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.logon:
+                mLogonName.setError("错误用户名");
+                mLogonPassword.setError("错误密码");
+                hideKeyboard();
+                break;
+        }
+    }
 }

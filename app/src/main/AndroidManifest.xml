@@ -44,7 +44,14 @@
         </service>
 
         <activity android:name=".ui.SharePrefernceActivity" />
-        <activity android:name=".ui.ReceiveIpActivity"></activity>
+        <activity android:name=".ui.ReceiveIpActivity" />
+        <activity
+            android:name=".ui.BasicActivity"
+            android:label="@string/title_activity_basic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.ToolBarActivity" />
+        <activity android:name=".ui.AIDLActivity" />
+        <activity android:name=".ui.TextActivity"></activity>
     </application>
 
 </manifest>

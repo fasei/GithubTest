@@ -14,6 +14,8 @@ import com.zt.wc.githubtest.adapter.MainInfoAdapter;
 import com.zt.wc.githubtest.base.BaseActivity;
 import com.zt.wc.githubtest.base.DividerItemDecoration;
 import com.zt.wc.githubtest.bean.MainInfoBean;
+import com.zt.wc.githubtest.bean.MainInfoViewHolder;
+import com.zt.wc.githubtest.ui.AIDLActivity;
 import com.zt.wc.githubtest.ui.GreenDaoActivity;
 import com.zt.wc.githubtest.ui.IOControlActivity;
 import com.zt.wc.githubtest.ui.LogonActivity;
@@ -21,6 +23,8 @@ import com.zt.wc.githubtest.ui.LogonUnicomActivity;
 import com.zt.wc.githubtest.ui.ReceiveIpActivity;
 import com.zt.wc.githubtest.ui.SharePrefernceActivity;
 import com.zt.wc.githubtest.ui.SweetDialogActivity;
+import com.zt.wc.githubtest.ui.TextActivity;
+import com.zt.wc.githubtest.ui.ToolBarActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,14 +44,16 @@ public class MainActivity extends BaseActivity {
 
     private List<MainInfoBean> mMainInfoData = null;
     private MainInfoAdapter mAdapter = null;
+    private int goInitPage=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ActivityStack.getInstance().addActivity(this);
+        ActivityStack.getInstance().addActivity(this);//堆栈的管理，如果出现异常，需要捕获的话，需要将所有Activity关闭
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initToolBar(mToolbar,true,"主界面");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         Log.d(TAG, "hello github!!!");
 
         initView();
@@ -78,13 +84,36 @@ public class MainActivity extends BaseActivity {
 
 
     private void initData() {
+        goInitPage=3;//初始进入的界面
         mMainInfoData = new ArrayList<>();
 //        mMainInfoData.add(new MainInfoBean(GreenDaoActivity.class,"GreenDao的使用","包括数据库的增删改查的使用，基本使用技巧"));
 
         mAdapter = new MainInfoAdapter(this, mMainInfoData);
         mRecycleView.setAdapter(mAdapter);
+        mSwipeRefresh.post(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeRefresh.setRefreshing(true);
+            }
+        });
+        mainData();
+
+        mSwipeRefresh.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeRefresh.setRefreshing(false);
+                if(goInitPage>=0&&goInitPage<mMainInfoData.size()) {
+                    //获取RecycleView的ViewHolder,通过事件触发点击事件
+                    MainInfoViewHolder itemViewHolder = (MainInfoViewHolder) mRecycleView.getChildViewHolder(mRecycleView.getChildAt(goInitPage));
+                    itemViewHolder.mGoGoGo.performClick();
+                }
+            }
+        },1000*2);
     }
 
+    /**
+     * 初始化adapter的数据
+     */
     private void mainData() {
         if (mMainInfoData == null) {
             mMainInfoData = new ArrayList<>();
@@ -98,8 +127,14 @@ public class MainActivity extends BaseActivity {
         mMainInfoData.add(new MainInfoBean(LogonUnicomActivity.class, "联通的授权界面", "演示联通授权界面"));
         mMainInfoData.add(new MainInfoBean(SharePrefernceActivity.class, "SharePrefernce工具类测试", "测试使用功能"));
         mMainInfoData.add(new MainInfoBean(ReceiveIpActivity.class, "接收局域网中的广播", "接收局域网中的广播"));
+        mMainInfoData.add(new MainInfoBean(ToolBarActivity.class, "ToolBar测试", "ToolBar测试"));
+        mMainInfoData.add(new MainInfoBean(AIDLActivity.class, "AIDL测试", "AIDL测试"));
+        mMainInfoData.add(new MainInfoBean(TextActivity.class, "TextView测试", "TextView字体测试"));
     }
 
+    /**
+     * 初始化界面布局
+     */
     private void initView() {
         mRecycleView.setLayoutManager(new LinearLayoutManager(this));
         mRecycleView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
@@ -136,7 +171,6 @@ public class MainActivity extends BaseActivity {
         mSwipeRefresh.setDistanceToTriggerSync(2 * 100);
         //设置刷新出现的位置
         mSwipeRefresh.setProgressViewEndTarget(false, 200);
-
     }
 
 
